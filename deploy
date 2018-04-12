@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "compiling"
+crystal build hello_world.cr --static
+echo "deploying"
+gcloud beta functions deploy explore \
+  --source=. \
+  --entry-point=explore \
+  --memory=2048MB \
+  --timeout=540 \
+  --trigger-http
+
