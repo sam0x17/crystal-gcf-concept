@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "compiling"
-crystal build hello_world.cr --static
+crystal build hello_world.cr --static --release
 echo "deploying"
 gcloud beta functions deploy explore \
   --source=. \
